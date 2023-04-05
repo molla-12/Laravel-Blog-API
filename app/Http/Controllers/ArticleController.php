@@ -42,7 +42,7 @@ class ArticleController extends Controller
             if ($request->hasfile('image')) {
                 foreach ($request->file('image') as $file) {
                     $name = $file->getClientOriginalName();
-                    $file->move(public_path() . '/Category/', $name);
+                    $file->move(public_path() . '/Article/', $name);
                     $imgData[] = $name;
                 }
 
