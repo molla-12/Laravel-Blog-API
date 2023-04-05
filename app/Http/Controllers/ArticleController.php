@@ -39,8 +39,8 @@ class ArticleController extends Controller
                 $article->tags()->sync($request->validated('tag'));
             }
 
-            if ($request->hasfile('images')) {
-                foreach ($request->file('images') as $file) {
+            if ($request->hasfile('image')) {
+                foreach ($request->file('image') as $file) {
                     $name = $file->getClientOriginalName();
                     $file->move(public_path() . '/Category/', $name);
                     $imgData[] = $name;
