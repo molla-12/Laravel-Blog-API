@@ -25,9 +25,9 @@ class StoreArticleRequest extends FormRequest
     public function rules()
     {
         return [
-            'category_id' => ['required', 'integer', Rule::In('categories')],
+            'category_id' => ['required', 'integer'],
             'title' => ['required', 'string'],
-            'tag.*' => ['nullable', Rule::In('tags')],
+            'tag.*' => ['nullable'],
             'details' => ['required', 'string'],
             'image.*' => ['nullable', 'jpeg', 'jpg', 'png', 'gif'],
         ];

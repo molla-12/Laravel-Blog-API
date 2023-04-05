@@ -25,10 +25,10 @@ class UpdateArticleRequest extends FormRequest
     public function rules()
     {
         return [
-            'category_id' => ['required', 'integer', Rule::In('categories')],
+            'category_id' => ['required', 'integer'],
             'title' => ['required', 'string'],
             'details' => ['required', 'string'],
-            'tag.*' => ['nullable', Rule::In('tags')],
+            'tag.*' => ['nullable'],
             'image.*' => ['nullable', 'jpeg', 'jpg', 'png', 'gif'],
         ];
     }
